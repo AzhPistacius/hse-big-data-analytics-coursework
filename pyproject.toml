@@ -14,16 +14,17 @@ package-dir = {"" = "src"}
 
 [project.optional-dependencies]
 dev = [
-    "jupyter>=1.1.1",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]",
     "mkdocs-awesome-pages-plugin>=2.10.1",
+    "mkdocs-simple-hooks>=0.1.5",
     "mkdocs-jupyter>=0.25.1",
+    "mkdocs-monorepo-plugin>=1.1.2",
     "pytest>=8.4.1",
     "ruff>=0.14.1",
     "mypy>=1.17.0",
     "pre-commit>=4.2.0",
-    "mkdocs",
-    "mkdocs-material",
-    "mkdocstrings[python]",
 ]
 
 [tool.pytest.ini_options]

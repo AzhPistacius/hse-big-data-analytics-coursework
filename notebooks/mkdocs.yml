@@ -1,0 +1,7 @@
+site_name: labs
+
+docs_dir: .
+
+nav:
+  - 'Математика для анализа данных':
+    - 'Лабораторная работа 2': 'math-for-data-analysis/hse_bda_2025_lab_2.ipynb'
