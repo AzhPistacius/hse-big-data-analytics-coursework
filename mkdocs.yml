@@ -1,0 +1,33 @@
+site_name: Аналитика Больших Данных
+
+repo_url: https://github.com/AzhPistacius/customer-event-prediction
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.tabs
+    - toc.integrate
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            # Показывать типы в сигнатурах функций
+            show_signature_annotations: true
+            # Не группировать методы по месту их определения
+            group_by_category: false
+            # Показывать имя модуля перед каждым объектом
+            show_root_heading: true
+
+nav:
+  - 'Главная': 'index.md'
+  - 'Справка по API': 'reference.md'
+  - 'Математика для анализа данных': 'math_for_data_analysis.md'
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences

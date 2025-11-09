@@ -1,0 +1,35 @@
+repos:
+  # Применение линтера при коммите
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.14.3
+    hooks:
+      - id: ruff-check
+        args: ["--fix", "--config=ruff.toml"]
+        types_or: [python, pyi, jupyter]
+      - id: ruff-format
+        args: ["--config=ruff.toml"]
+
+
+  # Общее
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-ast               # проверка корректности синтаксиса
+      - id: check-yaml
+      - id: check-json
+      - id: check-toml
+      - id: end-of-file-fixer       # добавление новой строки в конец
+      - id: trailing-whitespace     # удаление пробелов в конце строк
+      - id: detect-private-key      # проверка на утечки приватных ключей
+      - id: check-added-large-files # контроль размера добавляемых файлов (Максимум 50 МБ)
+        args: ["--maxkb=51200"]
+      - id: check-case-conflict     # конфликт имён с разным регистром
+      - id: check-merge-conflict    # поиск незавершённых конфликтов слияния
+
+  # Очистка вывода ноутбука перед коммитом
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.8.1
+    hooks:
+      - id: nbstripout
+        args: ["--extra-keys", "metadata"]
+        types: [jupyter]

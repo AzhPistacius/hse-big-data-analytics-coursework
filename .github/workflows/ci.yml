@@ -1,0 +1,38 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint_and_test:
+    name: Lint, Test & Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies
+        run: uv sync --extra dev
+
+      - name: Run Ruff Formatter Check
+        run: uv run ruff format --check .
+
+      - name: Run Ruff Linter
+        run: uv run ruff check .
+
+      - name: Run MyPy Type Check
+        run: uv run mypy .
+
+      #- name: Run PyTest
+      #  run: uv run pytest
