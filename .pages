@@ -1,0 +1,6 @@
+# Файл .pages для управления навигацией
+nav:
+    - Главная: index.md
+    - Математика для анализа данных: math_for_data_analysis.md
+    - ... # Это специальный синтаксис "остальное"
+    - Лабораторная 2: notebooks\math-for-data-analysis\hse_bda_2025_lab_2.ipynb
