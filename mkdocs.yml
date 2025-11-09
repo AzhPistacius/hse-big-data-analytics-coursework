@@ -20,5 +20,5 @@ plugins:
           options:
             show_source: true
           paths: [src]
-  - jupyter:
+  - mkdocs-jupyter:
       include_source: True

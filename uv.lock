@@ -368,7 +368,6 @@ name = "hse-big-data-analytics-coursework"
 version = "0.0.1"
 source = { virtual = "." }
 dependencies = [
-    { name = "mkdocs-jupyter" },
     { name = "numpy" },
     { name = "scikit-image" },
 ]
@@ -392,7 +391,6 @@ requires-dist = [
     { name = "jupyter", marker = "extra == 'dev'", specifier = ">=1.1.1" },
     { name = "mkdocs", marker = "extra == 'dev'" },
     { name = "mkdocs-awesome-pages-plugin", marker = "extra == 'dev'", specifier = ">=2.10.1" },
-    { name = "mkdocs-jupyter", specifier = ">=0.25.1" },
     { name = "mkdocs-jupyter", marker = "extra == 'dev'", specifier = ">=0.25.1" },
     { name = "mkdocs-material", marker = "extra == 'dev'" },
     { name = "mkdocstrings", extras = ["python"], marker = "extra == 'dev'" },
